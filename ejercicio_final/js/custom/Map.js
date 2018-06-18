@@ -16,9 +16,16 @@ function initMap(idmap){
 		maxZoom: 19,
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
 	});
+	var Geoeuskadi = L.tileLayer.wms("http://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK", {
+		layers: 'ORTO_EGUNERATUENA_MAXIMA_ACTUALIZADA',
+		format: 'image/png',
+		//transparent: true,
+		attribution: "Eusko Jaurlaritza / Gobierno Vasco"
+	});
 	var basemaps = {
 		'HOT': OpenStreetMap_HOT,
-		'Claro': CartoDB_Positron
+		'Claro': CartoDB_Positron,
+		'Satélite': Geoeuskadi
 	};
 	
 	// Definicion mapa
